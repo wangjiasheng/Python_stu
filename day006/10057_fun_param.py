@@ -15,3 +15,10 @@ def println(username="wjs",age=20,sex="男"):
     print username,age,sex
     return;
 println()
+#不定长参数
+def println(url,*params):
+    print url
+    for var in params:
+        print var
+    return;
+println(12,"1","2","3","4","5")
