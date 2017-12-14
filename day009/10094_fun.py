@@ -21,5 +21,6 @@ s=C();
 s.x=10;
 print s.x
 del s.x
+print s.__doc__
 
 
