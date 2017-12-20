@@ -1,0 +1,82 @@
+第一步安装依赖
+<pre name="code" class="plain">
+    apt-get install library*
+    apt-get install kdelibs5-dev
+    apt-get install libncurses5-dev                                      Linux下字符终端处理库
+    apt-get install cmake                                                Linux下C/C++预编译源码跨平台工具
+    apt-get install bison                                #大于2.1        Linux下C/C++语法分析器
+    apt-get install g++                                  #大于4.4.4      Linux下的C语言编译工具
+    apt-get install make                                 #大于3.75       Linux编译和构建工具
+</pre>
+第二部下载C++的Boost库
+<pre name="code" class="plain">
+    wget -O https://sourceforge.net/projects/boost/files/boost/1.59.0/boost_1_59_0.tar.gz
+    tar -zxvf boost_1_59_0.tar.gz -C /root/zip/mysql/boost_1_59_0
+</pre>
+第三部下载mysql源码
+<pre name="code" class="plain">
+    git clone https://github.com/mysql/mysql-server.git
+</pre>
+第四部添加用户组
+<pre name="code" class="plain">
+    groupadd mysql # 添加用户组
+    useradd -r -g mysql mysql # 添加用户
+    mkdir -p /usr/local/mysql # 创建安装目录
+    chown -R root:mysql /usr/local/mysql # 所有者为root，所属组为mysql
+    mkdir -p /usr/local/mysql/data # 创建数据存放目录
+    chown -R mysql:mysql /usr/local/mysql/data # 所有者为mysql，所属组为mysql
+</pre>
+第六步编译安装
+<pre name="code" class="plain">
+    cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql \
+        -DMYSQL_DATADIR=/usr/local/mysql/data \
+        -DSYSCONFDIR=/etc \
+        -DDEFAULT_CHARSET=utf8 \
+        -DDEFAULT_COLLATION=utf8_general_ci \
+        -DENABLED_LOCAL_INFILE=1 \
+        -DEXTRA_CHARSETS=all \
+        -DMYSQL_UNIX_ADDR=/usr/local/mysql/mysql.sock \
+        -DWITH_INNOBASE_STORAGE_ENGINE=1 \
+        -DWITH_ARCHIVE_STORAGE_ENGINE=1 \
+        -DWITH_BLACKHOLE_STORAGE_ENGINE=1 \
+        -DWITH_BOOST=/root/zip/MySQL/boost_1_59_0 \
+        -DWITH_MEMORY_STORAGE_ENGINE=1 \
+        -DWITH_MYISAM_STORAGE_ENGINE=1 \
+        -DWITH_PARTITION_STORAGE_ENGINE=1 \
+        -DWITH_PERFSCHEMA_STORAGE_ENGINE=1 \
+        -DWITH_READLINE=1 \
+        -DMYSQL_TCP_PORT=3306 \
+        -DENABLE_DOWNLOADS=0
+</pre>
+<pre name="code" class="plain">
+    -DCMAKE_INSTALL_PREFIX                                #安装路径
+    -DMYSQL_DATADIR                                       #数据存放目录
+    -DWITH_BOOST                                          #boost源码路径
+    -DSYSCONFDIR                                          #my.cnf配置文件目录
+    -DDEFAULT_CHARSET                                     #数据库默认字符编码
+    -DDEFAULT_COLLATION                                   #默认排序规则
+    -DENABLED_LOCAL_INFILE                                #允许从文本导入数据
+    -DEXTRA_CHARSETS                                      #安装所有字符集
+    -DMYSQL_TCP_PORT                                      #设置mysql服务器监听端口
+    -DENABLE_DOWNLOADS                                    #是否要下载可选的文件
+</pre>
+安装mysql
+<pre name="code" class="plain">
+    make
+    make install
+</pre>
+安装MySQL-Python依赖库
+<pre name="code" class="plain">
+    apt-get install python2.7
+    apt-get install python2.7-dev
+    apt-get install default-libmysqlclient-dev
+</pre>
+下载MySQL-Python库
+<pre name="code" class="plain">
+    https://pypi.python.org/packages/a5/e9/51b544da85a36a68debe7a7091f068d802fc515a3a202652828c73453cad/MySQL-python-1.2.5.zip#md5=654f75b302db6ed8dc5a898c625e030c
+</pre>
+备用下载
+<pre name="code" class="plain">
+    https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
+    https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.20.tar.gz
+</pre>

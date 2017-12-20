@@ -5,7 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<form action="http://192.168.43.250">    <input type="filename">
+<form action="http://192.168.43.250/cgi-bin/upload.cgi" method="post" enctype="multipart/form-data">
+    <input type="file" name="filename"><br>
+    <input type="submit" name="提交">
     </form>
 </body>
 </html>
