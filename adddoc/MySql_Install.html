@@ -80,3 +80,31 @@
     https://cmake.org/files/v3.10/cmake-3.10.1.tar.gz
     https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.20.tar.gz
 </pre>
+数据库配置
+2. 设置远程访问权限
+<pre name="code" class="plain">
+  mysql -u root -ppassword    //进入mysql控制台
+  mysql>use mysql;
+  mysql>update user set host = '%' where user = 'root';    //这个命令执行错误时可略过
+  mysql>flush privileges;
+  mysql>select host, user from user; //检查‘%’ 是否插入到数据库中
+  mysql>quit
+</pre>
+修改ROOT密码
+<pre name="code" class="plain">
+    killall -TERM mysqld
+    mysqld  --skip-grant-tables &
+    mysql -u root
+    update mysql.user set password=PASSWORD('812330500') where User='root';
+    flush privileges;
+    quit;
+</pre>
+或者(相当于上面两步)
+<pre name="code" class="plain">
+    grant all privileges on *.* to 'root'@'%' identified by '812330500';
+    GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY '812330500' WITH GRANT OPTION;
+</pre>
+设置远程访问IP(Debian)
+<pre name="code" class="plain">
+    /etc/mysql/mariadb.conf.d/50-server.cnf #修改bind-address
+</pre>
