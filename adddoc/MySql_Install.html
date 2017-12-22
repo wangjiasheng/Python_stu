@@ -1,12 +1,19 @@
 第一步安装依赖
 <pre name="code" class="plain">
-    apt-get install library*
+    apt-get install gcc
+    apt-get install libpcre3
+    apt-get install zlib1g
+    apt-get install libbz2-dev
     apt-get install kdelibs5-dev
     apt-get install libncurses5-dev                                      Linux下字符终端处理库
     apt-get install cmake                                                Linux下C/C++预编译源码跨平台工具
     apt-get install bison                                #大于2.1        Linux下C/C++语法分析器
     apt-get install g++                                  #大于4.4.4      Linux下的C语言编译工具
     apt-get install make                                 #大于3.75       Linux编译和构建工具
+</pre>
+或者
+<pre name="code" class="plain">
+    sudo apt-get install g++ gcc make automake perl libncurses5-dev kdelibs_dev kdelib
 </pre>
 第二部下载C++的Boost库
 <pre name="code" class="plain">
