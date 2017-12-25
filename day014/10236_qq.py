@@ -7,7 +7,7 @@ from email.utils import formataddr
 sender="314232332@qq.com"
 pwssword="nlkptgkhgiwcbhhf"
 
-receivers=['346382732@qq.com']
+receivers=['1317751406@qq.com']
 
 server="mail.hfbank.com.cn"
 port="25"
