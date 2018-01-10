@@ -1,0 +1,96 @@
+1.安装ncurses
+    tar zxvf ncurses-6.0.tar.gz
+    cd ncurses-6.0
+    ./configure
+    make&&make install
+    如果报错则删除include/curses.h中mouse_trafo所在行的注释/* generated */，重新make，顺利编译通过
+2.安装cmake.
+    tar zxvf cmake-3.6.0.tar.gz
+    cd cmake-3.6.0
+    ./bootstrap&&gmake&&make&&make install
+3.编译安装zlib
+    ./configure
+    make
+    make install
+4.安装perl
+    cp configure.gnu configure
+    ./configure -des -Dprefix=/usr/local/perl
+    make
+    make test //在这步结束的时候有一个error，但不影响我们后续的操作，test没有完成100%
+    make install
+5.解压boost_1_59_0.tar.gz
+    tar -zxvf boost_1_59_0.tar.gz -C /usr/local/boost
+6.安装myql
+    tar zxvf  mysql-5.7.16.tar.gz
+    cd  mysql-5.7.16
+    groupadd mysql
+    useradd -r -g mysql mysql
+    mkdir /usr/local/mysql
+    mkdir -p /data/mysqldb
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost -DMYSQL_DATADIR=/data/mysqldb -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DMYSQL_TCP_PORT=3306 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1
+    make&&make install   // 如果make出错执行 make clean&&rm CMakeCache.txt
+7.mysql相关配置
+    cd /usr/local/mysql/
+    su root
+    chown root:root /usr/local/mysql
+    chown root:root /var/lib/mysql
+    chown root:root /data/mysqldb
+
+    下边初始化配置文件
+    bin/mysqld --initialize --user=root --basedir=/usr/local/mysql/ --datadir=/data/mysqldb  #初始化数据库
+    cp support-files/mysql.server /etc/init.d/mysqld
+    update mysql.user set password=PASSWORD('812330500') where User='root';
+    编辑/etc/my.cnf
+    vi /etc/profile
+    export PATH=/usr/local/mysql/bin:/usr/local/mysql/lib:$PATH
+    source /etc/profile
+    chkconfig --level 35 mysqld on  #加入开机自启动
+
+    会出现问题 这里写
+    mysqld --initalize
+    mysqld --user=root
+    killall -TERM mysqld
+    mysqld  --skip-grant-tables &
+    mysql -u root
+    update mysql.user set authentication_string=PASSWORD('812330500') where User='root';
+    flush privileges;
+    SET PASSWORD = PASSWORD('812330500');
+    quit;
+8.安装bind
+./configure --prefix=/usr/local/bind/ --with-dlz-mysql=/usr/local/mysql --enable-threads=no --enable-largefile --disable-ipv6 --with-openssl=no  //--enable-threads 多线程支持（官网解析是需要关闭）,--enable-largefile 启用大文件支持,--disable-ipv6  关闭ipv6支持,--with-dlz-mysql意思是使用mysql存储域名解析
+make
+make install
+
+
+9配置Bind9
+create database example;
+use example;
+CREATE TABLE `example` (
+`id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+`zone` varchar(255) NOT NULL,
+`host` varchar(255) NOT NULL DEFAULT '@',
+`type` enum('MX','CNAME','NS','SOA','A','PTR') NOT NULL,
+`data` varchar(255) DEFAULT NULL,
+`ttl` int(11) NOT NULL DEFAULT '800',
+`mx_priority` int(11) DEFAULT NULL,
+`refresh` int(11) NOT NULL DEFAULT '3600',
+`retry` int(11) NOT NULL DEFAULT '3600',
+`expire` int(11) NOT NULL DEFAULT '86400',
+`minimum` int(11) NOT NULL DEFAULT '3600',
+`serial` bigint(20) NOT NULL DEFAULT '2016111600',
+`resp_person` varchar(64) NOT NULL DEFAULT 'node02.example.com.',
+`primary_ns` varchar(64) NOT NULL DEFAULT 'node02.example.com.',
+PRIMARY KEY (`id`)
+);
+insert INTO example  (zone,host,type,data,ttl,retry) values ('example.com','no','A','10.255.1.27',86400,15);
+insert INTO example  (zone,host,type,data,ttl,retry) values ('alan.com','no','A','10.255.1.29',86400,15);
+insert INTO example  (zone,host,type,data,ttl,retry) values ('example.com','node','A','10.255.1.252',86400,15);
+insert INTO example  (zone,host,type,data,ttl,retry) values ('example.com','node02','A','192.168.1.250',86400,15);
+
+SET PASSWORD = PASSWORD('com');
+
+service mysqld stop
+mysqld_safe --user=mysql --skip-grant-tables --skip-networking &
+
+
+参考连接： http://blog.csdn.net/lishangwen_alan/article/details/53332889

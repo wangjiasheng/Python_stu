@@ -1,0 +1,63 @@
+1.安装插件
+pip install virtualenv
+
+pip install https://github.com/pypa/virtualenv/tarball/develop
+
+curl -O https://pypi.python.org/packages/source/v/virtualenv/virtualenv-X.X.tar.gz
+tar xvfz virtualenv-X.X.tar.gz
+cd virtualenv-X.X
+python setup.py install
+
+curl -O https://pypi.python.org/packages/source/v/virtualenv/virtualenv-X.X.tar.gz
+tar xvfz virtualenv-X.X.tar.gz
+cd virtualenv-X.X
+python virtualenv.py myVE
+
+注意：
+安装到Python 2 时，就使用 pip2 install [name]，例如：pip2 install virtualenv
+安装到Python 3 时，就使用 pip3 install [name]，例如：pip3 install virtualenv
+
+pip升级
+当我们指定 Python2 的 pip,需要使用指令: py -2 -m pip install --upgrade pip
+当我们指定 Python3 的 pip,需要使用指令: python -m pip install --upgrade pip
+
+1.先创建虚拟空间
+virtualenv -p C:/Python27/python.exe venv35
+cd venv35/Scripts
+activate venv35
+deactivate
+2.安装 virtualenvwrapper
+安装到Python 3 时，pip3 install virtualenvwrapper-win
+安装到Python 2 时，pip2 install virtualenvwrapper-win
+
+easy_install virtualenvwrapper
+
+测试
+virtualenv _testenv
+
+mkvirtualenv venv352
+deactivate
+workon venv352
+
+
+
+
+自己的方法
+virtualenv testenv --python=C:\Python27\python.exe        #将在当前目录下生成虚拟环境
+activate 激活虚拟环境                                     #必须在生成的虚拟环境的Scripts
+deactivate关闭虚拟环境                                    #必须在生成的虚拟环境的Scripts
+切换环境
+activate testenv
+deactivate关闭虚拟环境
+-------------------------------------------------------------------
+mkvirtualenv testenv3 --python=C:\Python27\python.exe     #将在C:\Users\wjs\Envs目录下生成虚拟环境,可以通过环境变量 WORKON_HOME来定制
+通过 workon 来查看当前有哪些虚拟环境
+通过workon testenv3 来切换虚拟环境
+
+通过pip list来查看当前环境安装的库
+
+cdvirtualenv                   #进入当前环境目录
+workon                         #列出当前已有的环境
+deactivate                     #退出环境
+rmvirtualenv                   #删除环境
+cpvirtualenv env1 env3         #复制环境

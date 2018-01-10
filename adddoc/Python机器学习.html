@@ -1,0 +1,51 @@
+第一步安装cygwin
+Win + R 输入cmd 然后输入cygwin
+下载python2.7
+wget  http://www.python.org/ftp/python/2.7/Python-2.7.tar.bz2
+解压python2.7原码
+tar jfvx Python-2.7.tar.bz2
+编译不通过将来再写
+
+设置环境变量
+Path添加 C:\Python27;C:\Python27\Scripts，而PYTHONPATH添加C:\Python27;C:\Python27\Lib;C:\Python27\DLLs;C:\Python27\Lib\lib-tk;
+
+python -m pip install -U pip
+
+安装 numpy
+E:\temp>pip install numpy-1.14.0-cp27-none-win_amd64.whl                   #或者直接安装 pip install numpy
+安装测试
+from numpy import *
+random.rand(4,d)
+
+安装scipy
+pip install scipy-1.0.0-cp27-none-win_amd64.whl                           #或者直接安装 pip install scipy
+
+安装matplotlib                                                            #https://pypi.python.org/pypi/matplotlib/1.4.3
+pip install matplotlib-1.4.3-cp27-none-win_amd64.whl                      #或者直接安装 pip install matplotlib
+
+安装six                                                                   #https://pypi.python.org/pypi/six
+pip install six-1.11.0-py2.py3-none-any.whl                               #或者直接安装 pip install matplotlib
+
+安装python-dateutil                                                       #https://pypi.python.org/pypi/python-dateutil/2.4.2
+pip install python_dateutil-2.4.2-py2.py3-none-any.whl
+
+安装pyparsing                                                             #https://pypi.python.org/pypi/pyparsing/2.0.3#downloads
+pip install pyparsing-2.0.3-py2.py3-none-any.whl
+
+安装 setuptools
+wget https://pypi.python.org/packages/source/s/setuptools/setuptools-5.7.tar.gz
+tar zxvf setuptools-5.7.tar.gz
+cd setuptools-5.7
+python setup.py install
+
+wget https://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+tar zxvf setuptools-0.6c11.tar.gz
+cd setuptools-0.6c11
+python setup.py install
+
+安装scikit-learn
+easy_install scikit-learn
+
+安装 jieba                                          #http://blog.csdn.net/xieyan0811/article/details/58585582
+pip install -U jieba
+
