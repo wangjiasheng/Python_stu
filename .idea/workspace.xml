@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ad5f13b0-2883-4361-a844-dcd7a76f9432" name="Default" comment="f">
-      <change beforePath="$PROJECT_DIR$/.idea/untitled.iml" afterPath="$PROJECT_DIR$/.idea/untitled.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/adddoc/Python机器学习.html" afterPath="$PROJECT_DIR$/adddoc/Python机器学习.html" />
+      <change beforePath="$PROJECT_DIR$/adddoc/Python爬虫学习.html" afterPath="$PROJECT_DIR$/adddoc/Python爬虫学习.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -197,41 +197,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Python机器学习.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Python机器学习.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/adddoc/Python机器学习.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
+            <state relative-caret-position="342">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Python基础.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adddoc/Python基础.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="467">
-              <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Python爬虫学习.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Python爬虫学习.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/adddoc/Python爬虫学习.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="python虚拟环境管理.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/adddoc/python虚拟环境管理.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="10" />
+            <state relative-caret-position="19">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -269,6 +249,7 @@
       <find>print</find>
       <find>title</find>
       <find>shelf</find>
+      <find>wh</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\wjs\PycharmProjects\untitled</dir>
@@ -325,12 +306,12 @@
         <option value="$PROJECT_DIR$/adddoc/按位取反解释.html" />
         <option value="$PROJECT_DIR$/adddoc/Python基础.html" />
         <option value="$PROJECT_DIR$/adddoc/Python机器学习.py" />
-        <option value="$PROJECT_DIR$/adddoc/Python机器学习.html" />
         <option value="$PROJECT_DIR$/day018/python.py" />
         <option value="$PROJECT_DIR$/adddoc/python网络爬虫.html" />
         <option value="$PROJECT_DIR$/adddoc/python虚拟环境管理.html" />
         <option value="$PROJECT_DIR$/adddoc/Python.html" />
         <option value="$PROJECT_DIR$/adddoc/Python爬虫学习.html" />
+        <option value="$PROJECT_DIR$/adddoc/Python机器学习.html" />
       </list>
     </option>
   </component>
@@ -341,8 +322,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-31" />
-    <option name="y" value="66" />
+    <option name="x" value="-1" />
+    <option name="y" value="25" />
     <option name="width" value="1346" />
     <option name="height" value="709" />
   </component>
@@ -389,7 +370,7 @@
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="f&#9;FILE&#9;file://C:/Users/wjs/PycharmProjects/untitled/day006/10057_fun_param.py" />
-    <property name="last_opened_file_path" value="C:/Python27/tutorial/tutorial" />
+    <property name="last_opened_file_path" value="C:/Python27/tutorial2" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
   <component name="RecentsManager">
@@ -937,18 +918,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/adddoc/Python机器学习.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="28" column="43" lean-forward="false" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/adddoc/Python基础.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+        <state relative-caret-position="144">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -963,8 +936,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/adddoc/Python爬虫学习.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="47" lean-forward="false" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
+        <state relative-caret-position="19">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/adddoc/Python机器学习.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
